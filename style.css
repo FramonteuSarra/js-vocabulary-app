@@ -8,14 +8,17 @@ body{
 }
 
 hr{
-  margin-left: -40px;
-  padding-left: 40px;
-  padding-right: 39px;
+  margin-left: -2px;
   width: 100%;
   margin-bottom: 30px;  
   border-color: bisque;
   height: 1px;
   background-color: bisque;
+}
+
+.clearfix{
+  float: none;
+  clear: both;
 }
 
 #app-container{
@@ -104,3 +107,66 @@ hr{
   float: right;
   margin-top: -40px;
 }
+
+/* RESPONSIVE */
+
+@media (max-width: 1250px){
+
+#app-container{
+  margin-left: 34%;
+}
+
+}
+
+@media (max-width: 1024px){
+
+#app-container{
+  margin-left: 43%;
+}
+
+}
+
+@media (max-width: 900px){
+
+#score-container{
+  display: flex;
+  float: none;
+  position: relative;
+  width: 100%;
+  padding: 0px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin: 0%;
+}
+
+#score-container-first-div{
+  margin-left: 15px;
+}
+
+#score-container hr{
+  display: none;
+}
+
+#score-container h2{
+  display: contents;
+}
+
+#app-container{
+  width: 100%;
+  margin: 0%;
+}
+
+#header-container, #translated-word-container, #buttons-container{
+  border-radius: 0px;
+  margin: 0%;
+  padding: 0px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.buttons{
+  min-width: 70px;
+}
+
+}
+
