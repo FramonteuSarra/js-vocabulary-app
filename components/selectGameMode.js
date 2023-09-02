@@ -13,6 +13,11 @@ export const selectGameMode = () => {
                 modoJuego1();
                 updateScore( 0, 1 );     // '0' reinicializa los valores de los puntajes || El 2do argumento indica en updateScore cual es el modo de juego que tiene que recargar
                 document.querySelector('#select-game-mode').selected = 'selected';      // Mantiene el select con el primer valor para que todas las opciones estén siempre disponibles para elegir
+                const input = document.createElement('input');
+                input.type = 'text';
+                
+                document.querySelector('#translated-word-container').append( input );
+                input.selected = 'selected';
                 break;
             case '2':
                 modoJuego2();

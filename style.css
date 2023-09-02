@@ -121,6 +121,10 @@ hr{
 
 @media (max-width: 1024px){
 
+body{
+  background-color: antiquewhite;
+}
+
 #score-container{
   display: flex;
   float: none;
@@ -185,10 +189,6 @@ hr{
 
 @media (max-width: 543px){
 
-#score-container{
-  font-size: 50%;
-}
-
 #score-container h3{
   margin-right: 20px;
   margin-bottom: 15px;
@@ -204,5 +204,26 @@ hr{
   padding-bottom: 15px;
 }
     
+}
+
+@media (max-width: 393px){
+  
+#score-container{
+  font-size: 50%;
+}
+
+#score-container h3{
+  margin-right: 15px;
+  margin-bottom: 10px;
+}
+
+}
+
+@media (max-width: 321px){
+
+#app-container, #score-container{
+  width: 321px;
+}
+
 }
 
