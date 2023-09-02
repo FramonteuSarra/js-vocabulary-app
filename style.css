@@ -247,6 +247,7 @@ body{
 .buttons{
   margin: 1.18%;
   padding: 2.8%;
+  height: 60px;
 }
 
 }
@@ -271,6 +272,7 @@ body{
 .buttons{
   margin: 1.094%;
   padding: 2.5%;
+  height: 50px;
 }
     
 }
@@ -289,6 +291,7 @@ body{
 .buttons{
   margin: 1.0%;
   padding: 2.25%;
+  height: 50px;
 }
 
 }
