@@ -52,9 +52,8 @@ hr{
 }
 
 .buttons{
-  min-width: 58.5px;
-  margin: 10px;
-  padding: 20px;
+  margin: 1.1%;
+  padding: 2.8%;
   cursor: pointer;
   border-radius: 15px;
   border: 1px solid #cec9c9;
@@ -111,10 +110,61 @@ hr{
 
 /* RESPONSIVE */
 
-@media (max-width: 1250px){
+@media (min-width: 2027px){
+
+#app-container{
+  margin-left: 30%;
+  width: 60%;  
+  font-size: 250%;
+}
+
+.buttons{
+  margin: 1.4%;
+  padding: 2.7%;
+  font-size: 65%;
+}
+
+#header-container{
+  font-size: 150%;
+}
+
+.select{
+  font-size: 50%;
+  width: 35%;
+  height: 25%;
+}
+
+#score-container{
+  width: 20%;
+  padding: 60px;
+  font-size: 200%;
+}
+
+}
+
+@media (max-width: 1232px){
 
 #app-container{
   margin-left: 34%;
+}
+
+#buttons-container{
+  width: 109.9%;
+  padding: 15px;
+}
+
+}
+
+@media (max-width: 1119px){
+
+#buttons-container{
+  width: 111.9%;
+  padding: 12px;
+}
+
+.buttons{
+  margin: 1.0%;
+  padding: 2.8%;
 }
 
 }
@@ -161,8 +211,13 @@ body{
   padding-bottom: 25px;
 }
 
+#buttons-container{
+  width: 100%;
+}
+
 .buttons{
-  min-width: 70px;
+  margin: 1.222%;
+  padding: 2.8%;
 }
 
 }
@@ -187,6 +242,15 @@ body{
   
 }
 
+@media (max-width: 569px){
+
+.buttons{
+  margin: 1.18%;
+  padding: 2.8%;
+}
+
+}
+
 @media (max-width: 543px){
 
 #score-container h3{
@@ -203,6 +267,11 @@ body{
   padding-top: 10px;
   padding-bottom: 15px;
 }
+
+.buttons{
+  margin: 1.094%;
+  padding: 2.5%;
+}
     
 }
 
@@ -215,6 +284,11 @@ body{
 #score-container h3{
   margin-right: 15px;
   margin-bottom: 10px;
+}
+
+.buttons{
+  margin: 1.0%;
+  padding: 2.25%;
 }
 
 }
