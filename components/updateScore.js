@@ -22,30 +22,12 @@ let localStorageKey = '';
 
 export const updateScore = ( action, gamemode ) => {
 
-    switch( gamemode ) {                        // Obtiene el highestScore de cada modo de juego desde el LocalStorage
+    localStorageKey = 'highestScoreGameMode' + gamemode;
+    score.highestScore = localStorage.getItem( localStorageKey );
 
-        case 1:
-
-            score.highestScore = localStorage.getItem('highestScoreGameMode1');
-            localStorageKey = 'highestScoreGameMode1';
-
-            if ( !score.highestScore ) {
-                score.highestScore = 0;
-                localStorage.setItem(localStorageKey, score.highestScore);
-            }
-            break;
-
-        case 2: 
-
-            score.highestScore = localStorage.getItem('highestScoreGameMode2');
-            localStorageKey = 'highestScoreGameMode2';
-
-            if ( !score.highestScore ) {
-                score.highestScore = 0;
-                localStorage.setItem(localStorageKey, score.highestScore);
-            }
-            break;
-
+    if ( !score.highestScore ) {
+        score.highestScore = 0;
+        localStorage.setItem(localStorageKey, score.highestScore);
     }
 
     switch( action ) {
