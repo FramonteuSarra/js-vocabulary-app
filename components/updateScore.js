@@ -1,5 +1,6 @@
-import { modoJuego1, modoJuego2 } from "../app";
+import { App } from "../app";
 import { headerTitleHtml, translatedWordHtml } from "../helpers/references";
+import { gameModeDescription, gameModesDescriptions } from "./renders/gameModesDescriptions";
 import { renderScore } from "./renders/renderScore"
 
 export const score = {
@@ -9,6 +10,7 @@ export const score = {
     multiplier: 1,
     lifes: 5,
     highestScore: 0,
+    iteration: 0,                                                           // Prefiero manejar las iteraciones de los 'for' de manera global para facilitar su reinicialización al cambiar entre los distintos modos de juego
 
 };
 
@@ -17,12 +19,14 @@ let localStorageKey = '';
 /**
  * 
  * @param {Number} action     Letra correcta: 1 | Error: 2 | Palabra completada: | 3
- * @param {Number} gamemode   Indica el modo de juego que debe recargar al completar una palabra
+ * @param {Number} gameMode   Indica el modo de juego que debe recargar al completar una palabra
  */
 
-export const updateScore = ( action, gamemode ) => {
+export const updateScore = ( action ) => {
 
-    localStorageKey = 'highestScoreGameMode' + gamemode;
+    
+
+    localStorageKey = 'highestScoreGameMode' + gameModeDescription.type;
     score.highestScore = localStorage.getItem( localStorageKey );
 
     if ( !score.highestScore ) {
@@ -44,10 +48,12 @@ export const updateScore = ( action, gamemode ) => {
         case 1:
 
             score.totalScore = Math.round( score.totalScore + (10 * score.multiplier));
+
             if( score.totalScore >= score.highestScore ) {
                 score.highestScore = score.totalScore;
                 localStorage.setItem(localStorageKey, score.highestScore);
             }
+            
             break;
         
         case 2:
@@ -56,6 +62,7 @@ export const updateScore = ( action, gamemode ) => {
             score.multiplier = 1;
             if( score.lifes <= 0 ) {
                 translatedWordHtml.innerText = 'Game Over!';
+                return true;
             }
             break;
 
@@ -73,21 +80,26 @@ export const updateScore = ( action, gamemode ) => {
             }
             headerTitleHtml.innerText = 'Palabra Completada!';
             
+            const options = document.querySelectorAll('.select-option')
+            
+            options.forEach( ( option ) => {
+
+                option.disabled = 'disabled';
+                               
+            })
+
             setTimeout(() => {
-                switch( gamemode ) {
+                
+                options.forEach( ( option ) => {
 
-                    case 1: 
-                        modoJuego1();
-                        headerTitleHtml.innerText = 'Game Mode 1';
-                        break;
-
-                    case 2: 
-                        modoJuego2();
-                        headerTitleHtml.innerText = 'Game Mode 2';
-                        break;
-
-                }
-
+                    option.disabled = '';
+                                   
+                })
+                
+                App();
+                headerTitleHtml.innerText = gameModeDescription.name;
+                document.querySelector('.buttons').focus();
+                        
             }, 1500);
             break;
 

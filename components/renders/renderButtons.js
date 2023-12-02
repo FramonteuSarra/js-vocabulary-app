@@ -12,6 +12,7 @@ export const renderButtons = () => {
         createButton.classList.add('buttons');
         createButton.value = letter;
         buttonsContainer.append( createButton );
+        
     
     });
 };

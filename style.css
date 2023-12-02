@@ -1,6 +1,7 @@
 *{
   margin: 0px;
   padding: 0px;
+  font-family: Arial, Helvetica, sans-serif
 }
 
 body{
@@ -51,7 +52,7 @@ hr{
   border-radius: 0px 0px 20px 20px;
 }
 
-.buttons{
+.buttons, .startGameButton{
   margin: 1.1%;
   padding: 2.8%;
   cursor: pointer;
@@ -59,12 +60,18 @@ hr{
   border: 1px solid #cec9c9;
 }
 
-.buttons:hover{
+.buttons:hover, .startGameButton{
   box-shadow: 0px 0px 10px #cec9c9;
 }
 
-.buttons:active{
+.buttons:active, .startGameButton{
   box-shadow: 4px 4px 15px #cec9c9;
+}
+
+.startGameButton{
+  background-color: greenyellow;
+  font-size: 140%;
+  font-weight: bold;
 }
 
 #translated-word-container{
@@ -107,6 +114,12 @@ hr{
   float: right;
   margin-top: -40px;
 }
+
+#original-word{
+  font-size: 35px;
+}
+
+
 
 /* RESPONSIVE */
 

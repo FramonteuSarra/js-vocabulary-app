@@ -1,4 +1,5 @@
 import { selectContainerHtml } from "../../helpers/references";
+import { gameModeDescription, gameModesDescriptions } from "./gameModesDescriptions";
 
 
 
@@ -14,10 +15,15 @@ export const createSelectGameMode = ( gameModesAmounts ) => {
 
     for( let i = 0; i <= gameModesAmounts; i++) {
 
+        gameModeDescription.type = i;
+
+        gameModesDescriptions(); 
+
         const option = document.createElement('option');
 
-        option.text  = `Opción ${ i }` ;
+        option.text  = `${ i } - ${ gameModeDescription.name }`;
         option.value = i;
+        option.classList.add('select-option');
 
         if( i === 0 ) {
             option.id       = 'select-game-mode';
@@ -30,6 +36,6 @@ export const createSelectGameMode = ( gameModesAmounts ) => {
         
     }
 
-    selectContainerHtml.append( selectGameMode );
+    selectContainerHtml.append( selectGameMode );   
 
 }
