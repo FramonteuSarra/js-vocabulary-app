@@ -1,4 +1,4 @@
-export const translatedWords = [
+export const englishWords = [
     'accident',
     'activity',
     'actor',
@@ -15,7 +15,6 @@ export const translatedWords = [
     'analysis',
     'analyst',
     'anxiety',
-    'apartment',
     'appearance',
     'apple',
     'application',
@@ -105,6 +104,7 @@ export const translatedWords = [
     'disk',
     'direction',
     'debt',
+    'department',
     'depth',
     'dinner',
     'drama',

@@ -1,11 +1,11 @@
-import { letters } from "../../helpers/letters";
 import { buttonsContainer } from "../../helpers/references";
+import { gameModeDescription } from "./gameModesDescriptions";
 
 export const renderButtons = () => {
 
     buttonsContainer.innerHTML = '';
 
-    letters.forEach( letter => {
+    gameModeDescription.keyboard.forEach( letter => {
     
         const createButton = document.createElement('button');
         createButton.innerText = letter;
@@ -13,6 +13,5 @@ export const renderButtons = () => {
         createButton.value = letter;
         buttonsContainer.append( createButton );
         
-    
     });
 };

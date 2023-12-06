@@ -1,21 +1,22 @@
+import { actualWord } from "./getRandomWord";
 import { renderWords } from "./renders/renderWords";
 import { score, updateScore } from "./updateScore";
 
-export const justNextLetter = ( hiddenWordArray, translatedWordArray, translatedWord, originalWord, pressedKey ) => {       // Modo de juego que solo es válido al tocar la siguiente letra de la palabra, y no en cualquier orden
+export const justNextLetter = ( pressedKey ) => {       // Modo de juego que solo es válido al tocar la siguiente letra de la palabra, y no en cualquier orden
 
     if ( !pressedKey ) return;
 
     let success = false;
 
-    if (translatedWordArray[score.iteration] === pressedKey ) {
+    if ( actualWord.translatedWordArray[score.iteration] === pressedKey ) {
 
-        translatedWordArray[score.iteration] = '1';
-        hiddenWordArray[score.iteration] = pressedKey;
+        actualWord.translatedWordArray[score.iteration] = '1';
+        actualWord.hiddenWordArray[score.iteration] = pressedKey;
         success = true;
-        renderWords(originalWord, hiddenWordArray.join(' '));
+        renderWords( actualWord.originalWord, actualWord.hiddenWordArray.join(' ') );
         score.iteration++;
         
-        if (hiddenWordArray.join('') === translatedWord) {
+        if ( actualWord.hiddenWordArray.join('') === actualWord.translatedWord ) {
 
             score.iteration = 0;
             updateScore(3);

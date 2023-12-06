@@ -1,7 +1,16 @@
-import { originalWords } from '../helpers/originalWords';
-import { translatedWords } from '../helpers/translatedWords';
+import { englishWords } from '../helpers/englishWords';
+import { spanishWords } from '../helpers/spanishWords';
+import { gameModeDescription } from './renders/gameModesDescriptions';
 
-let selectedWords = [];
+export const actualWord = {
+
+    originalWord:        '',
+    translatedWord:      '',
+    hiddenWord:          '',
+    hiddenWordArray:     '',
+    translatedWordArray: []
+
+};
 
 /**
  * 
@@ -10,20 +19,15 @@ let selectedWords = [];
 
 export const getRandomWord = () => {
 
-    const randomIndex = Math.floor( Math.random() * originalWords.length );
-    
-    const originalWord = originalWords[randomIndex].toUpperCase();
+    const randomIndex = Math.floor( Math.random() * englishWords.length );                                          // Hago referencia a cualquiera de los archivos solo para tomar la longitud del arreglo
+   
+    actualWord.originalWord = gameModeDescription.originalLanguage[randomIndex].toUpperCase();
 
-    const translatedWord = translatedWords[randomIndex].toUpperCase();
-  
-    const hiddenWord = '_ '.repeat(translatedWord.length);
+    actualWord.translatedWord = gameModeDescription.translatedLanguage[randomIndex].toUpperCase();
+ 
+    actualWord.hiddenWord = '_ '.repeat(actualWord.translatedWord.length);
 
-    const hiddenWordArray = hiddenWord.split(' ');
-    const translatedWordArray = translatedWord.split('');
+    actualWord.hiddenWordArray = actualWord.hiddenWord.split(' ');
+    actualWord.translatedWordArray = actualWord.translatedWord.split('');
 
-    selectedWords = [];
-
-    selectedWords.push(originalWord, translatedWord, hiddenWord, hiddenWordArray, translatedWordArray);
-
-    return selectedWords;
 };

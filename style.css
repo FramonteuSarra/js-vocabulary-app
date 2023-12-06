@@ -83,7 +83,7 @@ hr{
   color: white;
 }
 
-.select{
+.selectGameMode, .selectLanguage1, .selectLanguage2{
   display: block;
   margin: auto;
   margin-bottom: 40px;

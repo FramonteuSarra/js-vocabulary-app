@@ -1,4 +1,4 @@
-export const originalWords = [
+export const spanishWords = [
     'accidente',
     'actividad',
     'actor',
@@ -15,7 +15,6 @@ export const originalWords = [
     'análisis',
     'analista',
     'ansiedad',
-    'departamento',
     'apariencia',
     'manzana',
     'aplicacion',
@@ -105,6 +104,7 @@ export const originalWords = [
     'disco',
     'direccion',
     'deuda',
+    'departamento',
     'profundidad',
     'cena',
     'drama',

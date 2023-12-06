@@ -1,23 +1,24 @@
 import { renderWords } from "../components/renders/renderWords";
 import { score, updateScore } from "../components/updateScore";
+import { actualWord } from "./getRandomWord";
 
-export const anyLetter = ( hiddenWordArray, translatedWordArray, translatedWord, originalWord, pressedKey ) => {
+export const anyLetter = ( pressedKey ) => {
 
     if ( !pressedKey ) return;
     
     let success = false;
 
-    for( score.iteration = 0; score.iteration < translatedWordArray.length; score.iteration++ ) {
+    for( score.iteration = 0; score.iteration < actualWord.translatedWordArray.length; score.iteration++ ) {
         
-        if( translatedWordArray[score.iteration] === pressedKey ) {
+        if( actualWord.translatedWordArray[score.iteration] === pressedKey ) {
 
-            translatedWordArray[score.iteration] = '1';
-            hiddenWordArray[score.iteration] = pressedKey;
+            actualWord.translatedWordArray[score.iteration] = '1';
+            actualWord.hiddenWordArray[score.iteration] = pressedKey;
             success = true;
 
-            renderWords( originalWord, hiddenWordArray.join(' ') );
+            renderWords( actualWord.originalWord, actualWord.hiddenWordArray.join(' ') );
             
-            if( hiddenWordArray.join('') === translatedWord ) {
+            if( actualWord.hiddenWordArray.join('') === actualWord.translatedWord ) {
                 
                 score.iteration = 0;
                 updateScore( 3 );

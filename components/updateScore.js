@@ -24,20 +24,25 @@ let localStorageKey = '';
 
 export const updateScore = ( action ) => {
 
-    
+    if( action !== 0 ) {
 
-    localStorageKey = 'highestScoreGameMode' + gameModeDescription.type;
-    score.highestScore = localStorage.getItem( localStorageKey );
+        localStorageKey = 'highestScoreGameMode' + gameModeDescription.chosenGameMode + gameModeDescription.chosenOriginalLanguage + gameModeDescription.chosenTranslatedLanguage;
+        score.highestScore = localStorage.getItem( localStorageKey );
 
-    if ( !score.highestScore ) {
-        score.highestScore = 0;
-        localStorage.setItem(localStorageKey, score.highestScore);
+        if ( !score.highestScore ) {
+
+            score.highestScore = 0;
+            localStorage.setItem(localStorageKey, score.highestScore);
+
+        }
+
     }
 
     switch( action ) {
 
         case 0: 
 
+            score.highestScore   = 0;
             score.totalScore     = 0;
             score.wordsCompleted = 0;
             score.multiplier     = 1;
@@ -62,6 +67,7 @@ export const updateScore = ( action ) => {
             score.multiplier = 1;
             if( score.lifes <= 0 ) {
                 translatedWordHtml.innerText = 'Game Over!';
+                renderScore( score );
                 return true;
             }
             break;
@@ -80,7 +86,7 @@ export const updateScore = ( action ) => {
             }
             headerTitleHtml.innerText = 'Palabra Completada!';
             
-            const options = document.querySelectorAll('.select-option')
+            const options = document.querySelectorAll('.option-gamemode');
             
             options.forEach( ( option ) => {
 

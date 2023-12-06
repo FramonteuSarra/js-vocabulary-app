@@ -1,26 +1,37 @@
-import { headerTitleHtml, originalWordHtml, translatedWordHtml } from '../helpers/references';
-import { createSelectGameMode } from './renders/createSelectGameMode';
+import { buttonsContainer, headerTitleHtml, originalWordHtml, translatedWordHtml } from '../helpers/references';
+import { languagesToChoose } from './languagesToChoose';
+import { createSelectGameMode } from './renders/createSelects';
 import { gameModeDescription, gameModesDescriptions } from './renders/gameModesDescriptions';
-import { startGame } from './startGame';
 import { updateScore } from './updateScore';
 
-export const selectGameMode = ( gameModesAmounts) => {
+export const selectGameMode = () => {
 
-    createSelectGameMode( gameModesAmounts );
+    createSelectGameMode();
 
-    document.querySelector('.select').addEventListener('change', ( event ) => {
+    document.querySelector('.selectGameMode').addEventListener('change', ( event ) => {
         
-        gameModeDescription.type = Number(event.target.value);
+        gameModeDescription.chosenOriginalLanguage   = '';
+        gameModeDescription.chosenTranslatedLanguage = '';
+        gameModeDescription.chosenGameMode = Number(event.target.value);
 
         gameModesDescriptions();
 
         headerTitleHtml.innerText = gameModeDescription.name;
         originalWordHtml.innerText = gameModeDescription.description;
-        translatedWordHtml.innerText = '';        
+        translatedWordHtml.innerText = '';
+        buttonsContainer.innerHTML = '';
         
         updateScore( 0 );     // '0' reinicializa los valores de los puntajes
-        startGame();
-                  
+        languagesToChoose();
+
+        const options = document.querySelectorAll('.option-gamemode')
+            
+            options.forEach( ( option ) => {
+
+                option.disabled = 'disabled';
+                               
+        })
+              
     });
     
 };
