@@ -48,11 +48,19 @@ export const createSelectLanguages = ( argument ) => {
         option.value = i;
         option.classList.add('select-option');
 
+        let languageType = 'original';
+
+        if( argument === '2' ) {
+            
+            languageType = 'al que traducir';
+        
+        }
+
         if( i === 0 ) {
             option.id       = 'select-game-mode';
             option.selected = 'selected';
             option.disabled = 'disabled';
-            option.text     = `Seleccione el idioma`;
+            option.text     = `Seleccione el idioma ${ languageType }`;
         }
 
         selectGameMode.appendChild( option );

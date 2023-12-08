@@ -1,8 +1,12 @@
 
 export const englishLetters = [
     'Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P',
-    'A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L', '',
+    'A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L', `'`,
     'Z', 'X', 'C', 'V', 'B', 'N', 'M'
+];
+
+export const englishSpecialKeyCodes = [
+    219
 ];
 
 export const spanishLetters = [
@@ -16,9 +20,9 @@ export const spanishSpecialKeyCodes = [
 ];
 
 export const germanLetters = [
-    'Q', 'W', 'E', 'R', 'T', 'Z', 'U', 'I', 'O', 'P',
-    'A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'Ü',
-    'Y', 'X', 'C', 'V', 'B', 'N', 'M', 'Ö', 'Ä'
+    'Q', 'W', 'E', 'R', 'T', 'Z', 'U', 'I', 'O', 'P', 'Ü',
+    'A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'Ö', 'Ä',
+    'Y', 'X', 'C', 'V', 'B', 'N', 'M'
 ];
 
 export const germanSpecialKeyCodes = [
@@ -26,9 +30,9 @@ export const germanSpecialKeyCodes = [
 ];
 
 export const russianLetters = [
-    'Й', 'Ц', 'У', 'К', 'Е', 'Н', 'Г', 'Ш', 'Щ', 'З', 'Х', 'Ъ',
-    'Ф', 'Ы', 'В', 'А', 'П', 'Р', 'О', 'Л', 'Д', 'Ж', 'Э', 'Ё',  
-    'Я', 'Ч', 'С', 'М', 'И', 'Т', 'Ь', 'Б', 'Ю'
+    'Й', 'Ц', 'У', 'К', 'Е', 'Н', 'Г', 'Ш', 'Щ', 'З', 'Х',
+    'Ф', 'Ы', 'В', 'А', 'П', 'Р', 'О', 'Л', 'Д', 'Ж', 'Э',
+    'Я', 'Ч', 'С', 'М', 'И', 'Т', 'Ь', 'Б', 'Ю', 'Ё', 'Ъ'
 ];
 
 export const russianSpecialKeyCodes = [

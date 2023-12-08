@@ -52,19 +52,28 @@ hr{
   border-radius: 0px 0px 20px 20px;
 }
 
-.buttons, .startGameButton{
-  margin: 1.1%;
-  padding: 2.8%;
+.spanishButtons, .englishButtons, .germanButtons, .russianButtons{
+  height: 55px;
   cursor: pointer;
   border-radius: 15px;
   border: 1px solid #cec9c9;
 }
 
-.buttons:hover, .startGameButton{
+.spanishButtons, .englishButtons{
+  margin: 1.1%;
+  width: 7.80%;
+}
+
+.germanButtons, .russianButtons{
+  margin: 1.1%;
+  width: 6.89%;
+}
+
+.spanishButtons:hover, .englishButtons:active, .startGameButton{
   box-shadow: 0px 0px 10px #cec9c9;
 }
 
-.buttons:active, .startGameButton{
+.spanishButtons:active, .englishButtons:active, .startGameButton{
   box-shadow: 4px 4px 15px #cec9c9;
 }
 
@@ -72,6 +81,11 @@ hr{
   background-color: greenyellow;
   font-size: 140%;
   font-weight: bold;
+  margin: 1.1%;
+  padding: 2.8%;
+  cursor: pointer;
+  border-radius: 15px;
+  border: 1px solid #cec9c9;
 }
 
 #translated-word-container{
@@ -87,7 +101,7 @@ hr{
   display: block;
   margin: auto;
   margin-bottom: 40px;
-  width: 225px;
+  width: 255px;
   height: 25px;
   background-color: black;
   color: white;
@@ -131,11 +145,11 @@ hr{
   font-size: 250%;
 }
 
-.buttons{
+/* .buttons{
   margin: 1.4%;
   padding: 2.7%;
   font-size: 65%;
-}
+} */
 
 #header-container{
   font-size: 150%;
@@ -175,10 +189,10 @@ hr{
   padding: 12px;
 }
 
-.buttons{
+/* .buttons{
   margin: 1.0%;
   padding: 2.8%;
-}
+} */
 
 }
 
@@ -228,10 +242,10 @@ body{
   width: 100%;
 }
 
-.buttons{
+/* .buttons{
   margin: 1.222%;
   padding: 2.8%;
-}
+} */
 
 }
 
@@ -257,11 +271,11 @@ body{
 
 @media (max-width: 569px){
 
-.buttons{
+/* .buttons{
   margin: 1.18%;
   padding: 2.8%;
   height: 60px;
-}
+} */
 
 }
 
@@ -282,11 +296,11 @@ body{
   padding-bottom: 15px;
 }
 
-.buttons{
+/* .buttons{
   margin: 1.094%;
   padding: 2.5%;
   height: 50px;
-}
+} */
     
 }
 
@@ -301,11 +315,11 @@ body{
   margin-bottom: 10px;
 }
 
-.buttons{
+/* .buttons{
   margin: 1.0%;
   padding: 2.25%;
   height: 50px;
-}
+} */
 
 }
 

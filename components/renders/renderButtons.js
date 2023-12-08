@@ -9,7 +9,7 @@ export const renderButtons = () => {
     
         const createButton = document.createElement('button');
         createButton.innerText = letter;
-        createButton.classList.add('buttons');
+        createButton.classList.add( gameModeDescription.keyboardClass );
         createButton.value = letter;
         buttonsContainer.append( createButton );
         

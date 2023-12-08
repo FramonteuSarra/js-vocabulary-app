@@ -107,7 +107,7 @@ export const updateScore = ( action ) => {
                 
                 App();
                 headerTitleHtml.innerText = gameModeDescription.name;
-                document.querySelector('.buttons').focus();
+                document.querySelector(`.${ gameModeDescription.keyboardClass }`).focus();
                         
             }, 1500);
             break;

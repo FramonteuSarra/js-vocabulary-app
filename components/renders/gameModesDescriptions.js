@@ -1,6 +1,6 @@
 import { englishWords } from "../../helpers/englishWords";
 import { germanWords } from "../../helpers/germanWords";
-import { englishLetters, germanLetters, germanSpecialKeyCodes, russianLetters, russianSpecialKeyCodes, spanishLetters, spanishSpecialKeyCodes } from "../../helpers/letters";
+import { englishLetters, englishSpecialKeyCodes, germanLetters, germanSpecialKeyCodes, russianLetters, russianSpecialKeyCodes, spanishLetters, spanishSpecialKeyCodes } from "../../helpers/letters";
 import { russianWords } from "../../helpers/russianWords";
 import { spanishWords } from "../../helpers/spanishWords";
 import { anyLetter } from "../anyLetter-GameMode";
@@ -21,6 +21,7 @@ export const gameModeDescription = {
     originalLanguage: '',
     translatedLanguage: '',
     keyboard: '',
+    keyboardClass: '',                              // Indica la clase de estilos de cada teclado
     specialKeyCodes: ''
 
 }
@@ -91,6 +92,7 @@ export const setTranslatedLanguage = () => {
             gameModeDescription.translatedLanguage = spanishWords;
             gameModeDescription.keyboard           = spanishLetters;
             gameModeDescription.specialKeyCodes    = spanishSpecialKeyCodes;
+            gameModeDescription.keyboardClass      = 'spanishButtons'
 
         break;
 
@@ -98,7 +100,8 @@ export const setTranslatedLanguage = () => {
 
             gameModeDescription.translatedLanguage = englishWords;
             gameModeDescription.keyboard           = englishLetters;
-            gameModeDescription.specialKeyCodes    = [];
+            gameModeDescription.specialKeyCodes    = englishSpecialKeyCodes;
+            gameModeDescription.keyboardClass      = 'englishButtons'
 
         break;
 
@@ -107,6 +110,7 @@ export const setTranslatedLanguage = () => {
             gameModeDescription.translatedLanguage = russianWords;
             gameModeDescription.keyboard           = russianLetters;
             gameModeDescription.specialKeyCodes    = russianSpecialKeyCodes;
+            gameModeDescription.keyboardClass      = 'russianButtons'
 
         break;
 
@@ -115,6 +119,7 @@ export const setTranslatedLanguage = () => {
             gameModeDescription.translatedLanguage = germanWords;
             gameModeDescription.keyboard           = germanLetters;
             gameModeDescription.specialKeyCodes    = germanSpecialKeyCodes;
+            gameModeDescription.keyboardClass      = 'germanButtons'
 
         break;
 
