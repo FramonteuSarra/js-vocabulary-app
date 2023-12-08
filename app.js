@@ -3,7 +3,6 @@ import { renderWords } from "./components/renders/renderWords";
 import { renderButtons } from "./components/renders/renderButtons";
 import { checkPressedKey } from "./components/checkPressedKey";
 import { gameModeDescription, setOriginalLanguage, setTranslatedLanguage } from "./components/renders/gameModesDescriptions";
-import { headerTitleHtml, translatedWordHtml } from "./helpers/references";
 
 export const App = () => {
 
@@ -18,9 +17,6 @@ export const App = () => {
     const eventFunction = ( event ) => {
 
             pressedKey = checkPressedKey( event );
-
-            translatedWordHtml.innerText = event.keyCode;
-            headerTitleHtml.innerText = event.key;
          
             completedWord = gameModeDescription.gameMode( pressedKey );
                     
