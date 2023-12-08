@@ -119,6 +119,10 @@ hr{
   font-size: 35px;
 }
 
+.input{
+  display: none;
+}
+
 
 
 /* RESPONSIVE */

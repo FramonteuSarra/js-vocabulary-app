@@ -1,6 +1,7 @@
 import { App } from "../app";
 import { headerTitleHtml, translatedWordHtml } from "../helpers/references";
-import { gameModeDescription, gameModesDescriptions } from "./renders/gameModesDescriptions";
+import { actualWord } from "./getRandomWord";
+import { gameModeDescription } from "./renders/gameModesDescriptions";
 import { renderScore } from "./renders/renderScore"
 
 export const score = {
@@ -66,7 +67,9 @@ export const updateScore = ( action ) => {
             score.lifes--;
             score.multiplier = 1;
             if( score.lifes <= 0 ) {
-                translatedWordHtml.innerText = 'Game Over!';
+                translatedWordHtml.innerText = `Game Over!
+                                             
+                                                La palabra era: ${ actualWord.translatedWord }`;
                 renderScore( score );
                 return true;
             }

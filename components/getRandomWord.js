@@ -1,5 +1,4 @@
 import { englishWords } from '../helpers/englishWords';
-import { spanishWords } from '../helpers/spanishWords';
 import { gameModeDescription } from './renders/gameModesDescriptions';
 
 export const actualWord = {
