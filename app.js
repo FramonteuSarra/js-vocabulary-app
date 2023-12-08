@@ -3,6 +3,7 @@ import { renderWords } from "./components/renders/renderWords";
 import { renderButtons } from "./components/renders/renderButtons";
 import { checkPressedKey } from "./components/checkPressedKey";
 import { gameModeDescription, setOriginalLanguage, setTranslatedLanguage } from "./components/renders/gameModesDescriptions";
+import { translatedWordHtml } from "./helpers/references";
 
 export const App = () => {
 
