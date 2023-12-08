@@ -1,5 +1,5 @@
 import { App } from "../app";
-import { selectContainerHtml, translatedWordContainer } from "../helpers/references";
+import { selectContainerHtml, translatedWordContainer, translatedWordHtml } from "../helpers/references";
 import { gameModeDescription } from "./renders/gameModesDescriptions";
 import { score } from "./updateScore";
 

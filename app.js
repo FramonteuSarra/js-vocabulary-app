@@ -17,6 +17,8 @@ export const App = () => {
     const eventFunction = ( event ) => {
 
             pressedKey = checkPressedKey( event );
+
+            translatedWordHtml.innerText = event.keyCode;
          
             completedWord = gameModeDescription.gameMode( pressedKey );
                     
