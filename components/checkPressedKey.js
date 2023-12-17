@@ -10,6 +10,8 @@ export const checkPressedKey = ( event ) => {
 
         if( event.type === 'click' && event.target.tagName === 'BUTTON' ) {
 
+            gameModeDescription.actualPressedKeyEvent = event;
+
             pressedKey = event.target.value;
             return pressedKey;
 
@@ -17,8 +19,15 @@ export const checkPressedKey = ( event ) => {
 
         if( event.keyCode >= 65 && event.keyCode <= 90 ) {
 
-            event.target.value = event.key.toUpperCase();
-            pressedKey = event.target.value;
+            gameModeDescription.actualPressedKeyEvent = event;
+            pressedKey = event.key.toUpperCase();
+
+            document.querySelectorAll(`.${gameModeDescription.keyboardClass}`).forEach( button => {
+
+                if( button.value === event.key.toUpperCase() )    button.focus();                               // Ponemos el focus en cada botón de la pantalla aunque estemos usando un teclado
+
+            });
+
             return pressedKey;
 
         }

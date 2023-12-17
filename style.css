@@ -69,11 +69,11 @@ hr{
   width: 6.89%;
 }
 
-.spanishButtons:hover, .englishButtons:active, .startGameButton{
+.spanishButtons:hover, .englishButtons:hover, .germanButtons:hover, .russianButtons:hover, .startGameButton{
   box-shadow: 0px 0px 10px #cec9c9;
 }
 
-.spanishButtons:active, .englishButtons:active, .startGameButton{
+.spanishButtons:active, .englishButtons:active, .germanButtons:active, .russianButtons:active, .startGameButton{
   box-shadow: 4px 4px 15px #cec9c9;
 }
 
@@ -88,6 +88,16 @@ hr{
   border: 1px solid #cec9c9;
 }
 
+.restartGameButton{
+  background-color:  #F91942;
+  float: right;
+  font-size: 80%;
+  border-radius: 15px;
+  border: 1px solid #cec9c9;
+  padding: 2.3%;
+  margin-top: -7px;
+}
+
 #translated-word-container{
   width: 100%;
   margin: 0px auto;
@@ -98,7 +108,7 @@ hr{
 }
 
 .selectGameMode, .selectLanguage1, .selectLanguage2{
-  display: block;
+  display: inline;
   margin: auto;
   margin-bottom: 40px;
   width: 255px;
@@ -131,6 +141,52 @@ hr{
 
 #original-word{
   font-size: 35px;
+}
+
+.divContainerSelectDifficulty, .divContainerSelectWordsType {
+  width: 255px;
+  display: inline-block;
+  margin-bottom: 40px;
+}
+
+.selectBoxDifficulty, .selectBoxWordsType {
+  position: relative;
+}
+
+.selectBoxDifficulty select, .selectBoxWordsType select {
+  display: inline;
+  margin: auto;
+  width: 255px;
+  height: 25px;
+  background-color: black;
+  color: white;
+  text-align: center;
+  border: 2px solid brown;
+}
+
+.overSelectDifficulty, .overSelectWordsType {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.divCheckBoxesDifficulty, .divCheckBoxesWordsType {
+  display: none;
+  border: 1px black solid;
+  background-color: black;
+  position: absolute;
+  width: 253px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  
+}
+
+.labelDifficulty, .labelWordsType {
+  display: inline;
+  color: white;
+  margin: 25px;
 }
 
 

@@ -1,6 +1,7 @@
 import { renderWords } from "../components/renders/renderWords";
 import { score, updateScore } from "../components/updateScore";
 import { actualWord } from "./getRandomWord";
+import { gameModeDescription } from "./renders/gameModesDescriptions";
 
 export const anyLetter = ( pressedKey ) => {
 
@@ -16,7 +17,7 @@ export const anyLetter = ( pressedKey ) => {
             actualWord.hiddenWordArray[score.iteration] = pressedKey;
             success = true;
 
-            renderWords( actualWord.originalWord, actualWord.hiddenWordArray.join(' ') );
+            renderWords( actualWord.originalWord.split(':')[1], actualWord.hiddenWordArray.join(' ') );
             
             if( actualWord.hiddenWordArray.join('') === actualWord.translatedWord ) {
                 
@@ -35,7 +36,15 @@ export const anyLetter = ( pressedKey ) => {
     };
 
     if( !success ) {
+
         updateScore( 2 );
+
+        document.querySelectorAll(`.${gameModeDescription.keyboardClass}`).forEach( button => {                                 
+
+            if( button.value === gameModeDescription.actualPressedKeyEvent.key?.toUpperCase() || button.value === gameModeDescription.actualPressedKeyEvent.target.value )  button.style.backgroundColor = '#FF7790';     // Marca en rojo el botón en caso de error
+
+        });
+ 
     }
         
 }

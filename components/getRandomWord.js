@@ -3,30 +3,26 @@ import { gameModeDescription } from './renders/gameModesDescriptions';
 
 export const actualWord = {
 
-    originalWord:        '',
-    translatedWord:      '',
-    hiddenWord:          '',
-    hiddenWordArray:     '',
-    translatedWordArray: []
-
+    originalWord:                  '',
+    translatedWord:                '',
+    hiddenWord:                    '',
+    hiddenWordArray:               '',
+    translatedWordArray:           [],
+    actualOriginalWordsArray:      [],
+    actualTranslatedWordsArray:    []
 };
-
-/**
- * 
- * @returns {Array<String>}
- */
 
 export const getRandomWord = () => {
 
-    const randomIndex = Math.floor( Math.random() * englishWords.length );                                          // Hago referencia a cualquiera de los archivos solo para tomar la longitud del arreglo
-   
-    actualWord.originalWord = gameModeDescription.originalLanguage[randomIndex].toUpperCase();
+    const randomIndex = Math.floor( Math.random() * actualWord.actualOriginalWordsArray.length );                                          
 
-    actualWord.translatedWord = gameModeDescription.translatedLanguage[randomIndex].toUpperCase();
- 
-    actualWord.hiddenWord = '_ '.repeat(actualWord.translatedWord.length);
+    actualWord.originalWord   = actualWord.actualOriginalWordsArray[randomIndex].toUpperCase();  
 
-    actualWord.hiddenWordArray = actualWord.hiddenWord.split(' ');
-    actualWord.translatedWordArray = actualWord.translatedWord.split('');
+    if( gameModeDescription.translateAPI === '0' ) {
+
+        const splitTranslatedWord = actualWord.actualTranslatedWordsArray[randomIndex].toUpperCase().split(':');
+        actualWord.translatedWord = splitTranslatedWord[1];
+
+    }
 
 };

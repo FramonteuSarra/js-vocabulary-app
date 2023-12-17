@@ -25,7 +25,7 @@ let localStorageKey = '';
 
 export const updateScore = ( action ) => {
 
-    if( action !== 0 ) {
+    if( gameModeDescription.chosenOriginalLanguage && gameModeDescription.chosenTranslatedLanguage ) {                    // Solo crea la key si ya se ha elegido el modo de juego y ambos idiomas
 
         localStorageKey = 'highestScoreGameMode' + gameModeDescription.chosenGameMode + gameModeDescription.chosenOriginalLanguage + gameModeDescription.chosenTranslatedLanguage;
         score.highestScore = localStorage.getItem( localStorageKey );
@@ -42,8 +42,7 @@ export const updateScore = ( action ) => {
     switch( action ) {
 
         case 0: 
-
-            score.highestScore   = 0;
+        
             score.totalScore     = 0;
             score.wordsCompleted = 0;
             score.multiplier     = 1;
