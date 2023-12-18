@@ -17,7 +17,7 @@ export const anyLetter = ( pressedKey ) => {
             actualWord.hiddenWordArray[score.iteration] = pressedKey;
             success = true;
 
-            renderWords( actualWord.originalWord.split(':')[1], actualWord.hiddenWordArray.join(' ') );
+            renderWords( actualWord.renderOriginalWord, actualWord.hiddenWordArray.join(' ') );
             
             if( actualWord.hiddenWordArray.join('') === actualWord.translatedWord ) {
                 
@@ -41,7 +41,8 @@ export const anyLetter = ( pressedKey ) => {
 
         document.querySelectorAll(`.${gameModeDescription.keyboardClass}`).forEach( button => {                                 
 
-            if( button.value === gameModeDescription.actualPressedKeyEvent.key?.toUpperCase() || button.value === gameModeDescription.actualPressedKeyEvent.target.value )  button.style.backgroundColor = '#FF7790';     // Marca en rojo el botón en caso de error
+            if( button.value === gameModeDescription.actualPressedKeyEvent.key?.toUpperCase() )  button.style.backgroundColor = '#FF7790';     // Marca en rojo el botón en caso de error
+            if( gameModeDescription.actualPressedKeyEvent.type === 'click' && gameModeDescription.actualPressedKeyEvent.target.value === button.value ) button.style.backgroundColor = '#FF7790';
 
         });
  

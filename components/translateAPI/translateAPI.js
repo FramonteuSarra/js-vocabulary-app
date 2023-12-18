@@ -1,16 +1,14 @@
 import { actualWord } from "../getRandomWord";
-import { gameModeDescription } from "../renders/gameModesDescriptions";
 
-export const translateFunction = () => {
+export const translateFunction = ( translateTo ) => {
 
-    const translateFrom = gameModeDescription.originalLanguageCode;
-    const translateTo   = gameModeDescription.translatedLanguageCode;
-
-    let apiUrl = `https://api.mymemory.translated.net/get?q=${actualWord.originalWord}&langpair=${translateFrom}|${translateTo}`;
+    let apiUrl = `https://api.mymemory.translated.net/get?q=${actualWord.originalWord}&langpair=en-GB|${translateTo}`;
 
     return new Promise(( resolve, reject ) => {
 
         fetch(apiUrl).then(res => res.json()).then(data => {
+
+            console.log( data.responseData.translatedText )
             
             let splitTranslatedWord = data.responseData.translatedText.split(':')[1]
 
@@ -25,8 +23,6 @@ export const translateFunction = () => {
                 }
 
             }
-
-            
 
             ( data )
             ? resolve( splitTranslatedWord )

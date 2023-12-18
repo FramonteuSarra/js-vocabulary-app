@@ -1,9 +1,10 @@
 import { App } from "../app";
-import { translatedWordContainer } from "../helpers/references";
-import { gameModeDescription } from "./renders/gameModesDescriptions";
+import { gameModeDescription, setTranslatedLanguage } from "./renders/gameModesDescriptions";
 import { eventSelectDifficulty } from "./showCheckBoxesDifficulty";
 import { eventSelectWordsType } from "./showCheckBoxesWordsType";
 import { score, updateScore } from "./updateScore";
+import { initArrayByParameters } from "./initArrayByParameters";
+import { selectContainerHtml } from "../helpers/references";
 
 export const startGameButton = document.createElement('button');
         
@@ -60,6 +61,8 @@ const InitGame = () => {
     });
 
     updateScore( 0 );     // '0' reinicializa los valores de los puntajes
+    setTranslatedLanguage();
+    initArrayByParameters();
     App();
     document.querySelector('#select-game-mode').selected = 'selected';      // Mantiene el select con el primer valor para que todas las opciones estén siempre disponibles para elegir
     document.querySelector(`.${ gameModeDescription.keyboardClass }`).focus();                             // Se coloca el focus sobre los botones para que no quede dentro del select y se ejecuten los eventos sin necesidad de hacer un click para salir del select
@@ -78,7 +81,7 @@ const InitGame = () => {
 
 export const startGame = () => {
               
-    translatedWordContainer.append( startGameButton );
+    selectContainerHtml.append( startGameButton );
     startGameButton.addEventListener('click', InitGame, true)
 
 }

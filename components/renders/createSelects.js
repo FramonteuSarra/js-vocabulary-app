@@ -34,6 +34,7 @@ export const createSelectGameMode = () => {
 
 }
 
+const codeLanguages = [',','es-ES','en-GB','ru-RU','de-DE'];
 
 export const createSelectLanguages = ( argument ) => {
 
@@ -45,7 +46,7 @@ export const createSelectLanguages = ( argument ) => {
         const option = document.createElement('option');
 
         option.text  = `${ languages[i] }`;
-        option.value = i;
+        option.value = codeLanguages[i];
         option.classList.add('select-option');
 
         let languageType = 'original';

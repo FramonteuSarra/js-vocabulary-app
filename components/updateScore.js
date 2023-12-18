@@ -20,7 +20,6 @@ let localStorageKey = '';
 /**
  * 
  * @param {Number} action     Letra correcta: 1 | Error: 2 | Palabra completada: | 3
- * @param {Number} gameMode   Indica el modo de juego que debe recargar al completar una palabra
  */
 
 export const updateScore = ( action ) => {

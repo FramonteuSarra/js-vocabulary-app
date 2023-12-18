@@ -15,7 +15,7 @@ export const justNextLetter = ( pressedKey ) => {       // Modo de juego que sol
         actualWord.translatedWordArray[score.iteration] = '1';
         actualWord.hiddenWordArray[score.iteration] = pressedKey;
         success = true;
-        renderWords( actualWord.originalWord.split(':')[1], actualWord.hiddenWordArray.join(' ') );
+        renderWords( actualWord.renderOriginalWord, actualWord.hiddenWordArray.join(' ') );
         score.iteration++;
         
         if ( actualWord.hiddenWordArray.join('') === actualWord.translatedWord ) {
@@ -39,7 +39,8 @@ export const justNextLetter = ( pressedKey ) => {       // Modo de juego que sol
 
         document.querySelectorAll(`.${gameModeDescription.keyboardClass}`).forEach( button => {                                 
 
-            if( button.value === gameModeDescription.actualPressedKeyEvent.key.toUpperCase() )  button.style.backgroundColor = '#FF7790';     // Marca en rojo el botón en caso de error
+            if( button.value === gameModeDescription.actualPressedKeyEvent.key?.toUpperCase() )  button.style.backgroundColor = '#FF7790';     // Marca en rojo el botón en caso de error
+            if( gameModeDescription.actualPressedKeyEvent.type === 'click' && gameModeDescription.actualPressedKeyEvent.target.value === button.value ) button.style.backgroundColor = '#FF7790';
 
         });
 

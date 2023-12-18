@@ -16,7 +16,7 @@ export const eventSelectDifficulty = ( event ) => {
 
     document.querySelector('.divCheckBoxesDifficulty').style.display = 'none';
     expanded = false;
-    document.querySelector('.selectBoxWordsType').style.display = 'block';
+    document.querySelector('.selectBoxWordsType').style.zIndex = '0';
 
     }
 
@@ -30,14 +30,14 @@ export const showCheckBoxesDifficulty = () => {
 
       divCheckBoxesDifficulty.style.display = 'block';
       expanded = true;
-      document.querySelector('.selectBoxWordsType').style.display = 'none';
+      document.querySelector('.selectBoxWordsType').style.zIndex = '0';
       addEventListener('click', eventSelectDifficulty, true);
       
     } else {
 
       divCheckBoxesDifficulty.style.display = 'none';
       expanded = false;
-      document.querySelector('.selectBoxWordsType').style.display = 'block';
+      document.querySelector('.selectBoxWordsType').style.zIndex = '1';
       removeEventListener('click', eventSelectDifficulty, true);
 
     }

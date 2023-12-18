@@ -1,28 +1,18 @@
-import { englishWords } from '../helpers/englishWords';
-import { gameModeDescription } from './renders/gameModesDescriptions';
-
 export const actualWord = {
 
-    originalWord:                  '',
-    translatedWord:                '',
+    originalWord:                  '',                  // Palabra base original en inglés obtenida del archivo local
+    renderOriginalWord:            '',                  // Palabra a traducir por el usuario dentro de la app, si se elige otro idioma que no sea inglés como base, esta palabra va a ser traducida por la API antes de mostrarla
+    translatedWord:                '',                  // Palabra en el idioma que el usuario escogió, la cual es la que debe ser escrita por el usuario en la app. Si resultase ser inglés, la palabra es la directamente escogida desde el archivo local, y solo se hace la traducción del renderOriginalWord
     hiddenWord:                    '',
     hiddenWordArray:               '',
     translatedWordArray:           [],
     actualOriginalWordsArray:      [],
-    actualTranslatedWordsArray:    []
 };
 
 export const getRandomWord = () => {
 
     const randomIndex = Math.floor( Math.random() * actualWord.actualOriginalWordsArray.length );                                          
 
-    actualWord.originalWord   = actualWord.actualOriginalWordsArray[randomIndex].toUpperCase();  
-
-    if( gameModeDescription.translateAPI === '0' ) {
-
-        const splitTranslatedWord = actualWord.actualTranslatedWordsArray[randomIndex].toUpperCase().split(':');
-        actualWord.translatedWord = splitTranslatedWord[1];
-
-    }
+    actualWord.originalWord = actualWord.actualOriginalWordsArray[randomIndex].toUpperCase();  
 
 };

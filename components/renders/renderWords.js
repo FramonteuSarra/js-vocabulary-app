@@ -7,7 +7,7 @@ import { actualWord } from "../getRandomWord";
  * @param {String} hiddenWord 
  */
 
-export const renderWords = ( originalWord = actualWord.originalWord.split(':')[1], hiddenWord = actualWord.hiddenWord ) => {
+export const renderWords = ( originalWord = actualWord.renderOriginalWord, hiddenWord = actualWord.hiddenWord ) => {
 
     originalWordHtml.innerHTML = originalWord;
     translatedWordHtml.innerHTML = hiddenWord;
