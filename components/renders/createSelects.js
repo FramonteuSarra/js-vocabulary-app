@@ -141,7 +141,7 @@ export const createSelectWordsType = () => {
     divSelectBox.appendChild( selectWordsType );
     divSelectBox.appendChild( divOverSelect );
 
-    const wordsType = ['Sustantivos','Adjetivos','Verbos','ss','aa','vv'];
+    const wordsType = ['Sustantivos','Adjetivos','Verbos','n','adj','v'];
 
     for( let i = 1; i <= 3; i++) {
        

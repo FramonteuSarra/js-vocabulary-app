@@ -91,12 +91,12 @@ hr{
 
 .restartGameButton{
   background-color:  #F91942;
-  float: right;
   font-size: 80%;
   border-radius: 15px;
   border: 1px solid #cec9c9;
   padding: 2.3%;
   margin-top: -7px;
+  margin-bottom: 30px;
 }
 
 #translated-word-container{
@@ -109,10 +109,9 @@ hr{
 }
 
 .selectGameMode, .selectLanguage1, .selectLanguage2{
-  display: inline;
+  display: block;
   margin: auto;
   margin-bottom: 40px;
-  margin-right: 3px;
   width: 255px;
   height: 25px;
   background-color: black;
@@ -149,7 +148,6 @@ hr{
   width: 255px;
   display: inline-block;
   margin-bottom: 40px;
-  margin-right: 3px;
 }
 
 .selectBoxDifficulty, .selectBoxWordsType {

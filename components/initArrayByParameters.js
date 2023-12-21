@@ -23,7 +23,7 @@ export const initArrayByParameters = () => {
 
     }
 
-    if( gameModeDescription.wordsTypes.length < 3 ) {
+    // if( gameModeDescription.wordsTypes.length < 3 ) {
 
         for( let i = 0; i < gameModeDescription.wordsTypes.length; i++) {
 
@@ -31,10 +31,10 @@ export const initArrayByParameters = () => {
 
         }
 
-    } else {
+    // } else {
 
-        actualWord.actualOriginalWordsArray = temporalOriginalArray;
+    //     actualWord.actualOriginalWordsArray = temporalOriginalArray;
 
-    }
+    // }
 
 }
