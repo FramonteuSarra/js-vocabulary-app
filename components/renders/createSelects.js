@@ -1,6 +1,5 @@
 import { selectContainerHtml } from "../../helpers/references";
-import { gameModeDescription, gameModesDescriptions, languages } from "./gameModesDescriptions";
-
+import { gameModeDescription, gameModesDescriptions } from "./gameModesDescriptions";
 
 export const createSelectGameMode = () => {
 
@@ -9,9 +8,7 @@ export const createSelectGameMode = () => {
 
     for( let i = 0; i <= gameModeDescription.totalGameModes; i++) {
 
-        gameModeDescription.chosenGameMode = i;
-
-        gameModesDescriptions(); 
+        gameModesDescriptions( i );
 
         const option = document.createElement('option');
 
@@ -19,7 +16,7 @@ export const createSelectGameMode = () => {
         option.value = i;
         option.classList.add('option-gamemode');
 
-        if( i === 0 ) {
+        if( i === 0 ) {                          // Seteamos la primer opción del select para que vaya por defecto y que no se pueda elegir, que va a ser la que indique al usuario para que sirve el select
             option.id       = 'select-game-mode';
             option.selected = 'selected';
             option.disabled = 'disabled';
@@ -34,7 +31,8 @@ export const createSelectGameMode = () => {
 
 }
 
-const codeLanguages = [',','es-ES','en-GB','ru-RU','de-DE'];
+const codeLanguages = [',','es-ES','en-GB','ru-RU','de-DE','fr-FR','it-IT','pt-PT'];
+const languages = [',','Español','Inglés','Ruso','Alemán','Francés','Italiano','Portugués'];
 
 export const createSelectLanguages = ( argument ) => {
 
@@ -86,7 +84,7 @@ export const createSelectDifficulty = () => {
     
     const selectDifficulty = document.createElement('select');
     const option           = document.createElement('option');
-    option.text = 'Seleccione las dificultades';
+    option.text            = 'Seleccione las dificultades';
 
     selectDifficulty.appendChild( option );
 
@@ -133,7 +131,7 @@ export const createSelectWordsType = () => {
     divCheckBoxes.classList.add('divCheckBoxesWordsType');
     
     const selectWordsType = document.createElement('select');
-    const option           = document.createElement('option');
+    const option          = document.createElement('option');
     option.text = 'Seleccione los tipos de palabras';
 
     selectWordsType.appendChild( option );
@@ -141,25 +139,41 @@ export const createSelectWordsType = () => {
     divSelectBox.appendChild( selectWordsType );
     divSelectBox.appendChild( divOverSelect );
 
-    const wordsType = ['Sustantivos','Adjetivos','Verbos','n','adj','v'];
+    const wordsTypeNames = ['Sustantivos','Adjetivos','Verbos','Adverbios','Núm. Cardinales','Núm. Ordinales','Oraciones'];
+    // const wordsTypeCodes = ['n','adj','v','adv','numcard','numord','sentence'];
+    const wordsTypeCodes = ['0','1','2','3','4','5','6'];
 
-    for( let i = 1; i <= 3; i++) {
+    for( let i = 0; i < wordsTypeCodes.length; i++) {
        
         const label = document.createElement('label');
         const input = document.createElement('input');
 
-        label.textContent = wordsType[i-1];
+        label.textContent = wordsTypeNames[i];
         label.classList.add('labelWordsType');
 
         input.type  = 'checkbox';
         input.classList.add('inputWordsType');
-        input.value = wordsType[i+2];
+        input.value = wordsTypeCodes[i];
         input.checked = true;
 
         divCheckBoxes.appendChild( label );
         divCheckBoxes.appendChild( input );
 
     }
+
+    const label = document.createElement('label');
+    const input = document.createElement('input');
+
+    label.textContent = 'Seleccionar todo';                              // Creamos una checkbox para poder seleccionar y deseleccionar todo con un solo click
+    label.classList.add('labelSelectAllWordsType');
+
+    input.type  = 'checkbox';
+    input.classList.add('inputSelectAllWordsType');
+    input.value = true;
+    input.checked = true;
+
+    divCheckBoxes.appendChild( label );
+    divCheckBoxes.appendChild( input );
 
     divContainer.appendChild( divSelectBox );
     divContainer.appendChild( divCheckBoxes );

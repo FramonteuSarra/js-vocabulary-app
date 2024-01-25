@@ -9,7 +9,7 @@ import { actualWord } from "../getRandomWord";
 
 export const renderWords = ( originalWord = actualWord.renderOriginalWord, hiddenWord = actualWord.hiddenWord ) => {
 
-    originalWordHtml.innerHTML = originalWord;
+    originalWordHtml.innerHTML = `${originalWord}  ${actualWord.wordType.toUpperCase()}`;
     translatedWordHtml.innerHTML = hiddenWord;
     
 };

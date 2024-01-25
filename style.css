@@ -52,14 +52,14 @@ hr{
   border-radius: 0px 0px 20px 20px;
 }
 
-.spanishButtons, .englishButtons, .germanButtons, .russianButtons{
+.spanishButtons, .englishButtons, .germanButtons, .russianButtons, .frenchButtons, .italianButtons, .portugueseButtons{
   height: 55px;
   cursor: pointer;
   border-radius: 15px;
   border: 1px solid #cec9c9;
 }
 
-.spanishButtons, .englishButtons{
+.spanishButtons, .englishButtons, .frenchButtons, .italianButtons, .portugueseButtons{
   margin: 1.1%;
   width: 7.80%;
 }
@@ -69,11 +69,11 @@ hr{
   width: 6.89%;
 }
 
-.spanishButtons:hover, .englishButtons:hover, .germanButtons:hover, .russianButtons:hover, .startGameButton:hover{
+.spanishButtons:hover, .englishButtons:hover, .germanButtons:hover, .russianButtons:hover, .frenchButtons:hover, .italianButtons:hover, .portugueseButtons:hover, .startGameButton:hover{
   box-shadow: 0px 0px 30px #cec9c9;
 }
 
-.spanishButtons:active, .englishButtons:active, .germanButtons:active, .russianButtons:active, .startGameButton:active{
+.spanishButtons:active, .englishButtons:active, .germanButtons:active, .russianButtons:active, .frenchButtons:active, .italianButtons:active, .portugueseButtons:active, .startGameButton:active{
   box-shadow: 4px 4px 35px #cec9c9;
 }
 
@@ -97,6 +97,17 @@ hr{
   padding: 2.3%;
   margin-top: -7px;
   margin-bottom: 30px;
+}
+
+.nextWordButton{
+  background-color:  #BFFD0B;
+  font-size: 80%;
+  border-radius: 15px;
+  border: 1px solid #cec9c9;
+  padding: 2.3%;
+  margin-top: -7px;
+  margin-bottom: 30px;
+  margin-left: 30px;
 }
 
 #translated-word-container{
@@ -175,6 +186,7 @@ hr{
 
 .divCheckBoxesDifficulty, .divCheckBoxesWordsType {
   display: none;
+  font-size: 22px;
   border: 1px black solid;
   background-color: black;
   position: absolute;
@@ -184,10 +196,16 @@ hr{
   z-index: 2;
 }
 
-.labelDifficulty, .labelWordsType {
+.labelDifficulty, .labelWordsType, .labelSelectAllWordsType {
   display: inline;
   color: white;
   margin: 25px;
+}
+
+.inputWordsType, .inputSelectAllWordsType{
+  float: right;
+  margin-right: 20px;
+  margin-top: 6px;
 }
 
 

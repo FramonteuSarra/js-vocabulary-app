@@ -2,33 +2,34 @@ import { buttonsContainer, headerTitleHtml, originalWordHtml, translatedWordHtml
 import { languagesToChoose } from './languagesToChoose';
 import { createSelectDifficulty, createSelectGameMode, createSelectWordsType } from './renders/createSelects';
 import { gameModeDescription, gameModesDescriptions } from './renders/gameModesDescriptions';
-import { showCheckBoxesDifficulty } from './showCheckBoxesDifficulty';
-import { showCheckBoxesWordsType } from './showCheckBoxesWordsType';
+import { selectAllWordsType } from './selectAllWordsType';
+import { showCheckBoxes } from './showCheckBoxes';
 
 export const selectGameMode = () => {
 
-    createSelectGameMode();
+    createSelectGameMode();                           // Creamos el select para los gameModes y una vez elegido un modo de juego va a seguir ejecutandose la app
 
     document.querySelector('.selectGameMode').addEventListener('change', ( event ) => {
         
         gameModeDescription.chosenOriginalLanguage   = '';
         gameModeDescription.chosenTranslatedLanguage = '';
-        gameModeDescription.chosenGameMode = Number(event.target.value);
 
-        gameModesDescriptions();
+        gameModesDescriptions( Number(event.target.value) );                    // Llamamos esta función indicandole el modo de juego para setear el nombre y la descripción del modo de juego
 
         headerTitleHtml.innerText = gameModeDescription.name;
         originalWordHtml.innerText = gameModeDescription.description;
         translatedWordHtml.innerText = '';
         buttonsContainer.innerHTML = '';
         
-        languagesToChoose();
+        languagesToChoose();       // Esta función crea los 2 selects para los idiomas, y espera a que se elijan ambos idiomas para mostrar el botón para iniciar el juego, por esta función continúa la app
 
         createSelectDifficulty();
-        document.querySelector('.selectBoxDifficulty').addEventListener('click', showCheckBoxesDifficulty, true);       // JS para el select de la dificultad para que pueda simular un select con checkboxes
+        document.querySelector('.selectBoxDifficulty').addEventListener('click', () => showCheckBoxes( '.divCheckBoxesDifficulty' ), true);       // JS para el select de la dificultad para que pueda simular un select con checkboxes
         
         createSelectWordsType();
-        document.querySelector('.selectBoxWordsType').addEventListener('click', showCheckBoxesWordsType, true);       // JS para el select de los tipos de palabras para que pueda simular un select con checkboxes
+        document.querySelector('.selectBoxWordsType').addEventListener('click', () => showCheckBoxes( '.divCheckBoxesWordsType' ), true);       // JS para el select de los tipos de palabras para que pueda simular un select con checkboxes
+
+        selectAllWordsType();                                                                      // Añade un checkbox para seleccionar o deseleccionar todos los tipos de palabras con un solo click
 
         document.querySelector('.restartGameButton')?.remove();                                     // Remueve el botón de reinicio en caso de existir
 

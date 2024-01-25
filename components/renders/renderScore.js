@@ -1,7 +1,8 @@
 import { lifesHtml, highestScoreHtml, multiplierHtml, totalScoreHtml, wordsCompletedHtml } from "../../helpers/references";
+import { score } from "../updateScore";
 
 
-export const renderScore = ( score ) => {
+export const renderScore = () => {
 
     totalScoreHtml.innerText        = score.totalScore;
     wordsCompletedHtml.innerText    = score.wordsCompleted;
