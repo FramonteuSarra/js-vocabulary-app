@@ -20,7 +20,7 @@ export const spanishSpecialKeyCodes = [
 ];
 
 export const spanishCharactersToReplace = [
-    'Á', 'A', 'É', 'E', 'Í', 'I', 'Ó', 'O', 'Ú', 'U'
+    'Á', 'A', 'É', 'E', 'Í', 'I', 'Ó', 'O', 'Ú', 'U', 'Ü', 'U'
 ];
 
 export const germanLetters = [

@@ -41,8 +41,8 @@ export const selectGameMode = () => {
                                
         })
               
-    });
-    
+    });    
+
 };
 
 

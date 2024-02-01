@@ -1,5 +1,4 @@
 NOUNS:
-
 aberration
 ability
 abnormality
@@ -2070,7 +2069,7 @@ penny
 pension
 people
 pepper
-per cent
+percent
 percentage
 perception
 performance
@@ -4050,7 +4049,7 @@ past
 patient
 peaceful
 peculiar
-per cent
+percent
 perfect
 permanent
 persevering
@@ -4726,7 +4725,7 @@ marginally
 maybe
 meanwhile
 mentally
-mercifuly
+mercifully
 merely
 meticulously
 minimally
@@ -4794,7 +4793,7 @@ partially
 particularly
 partly
 past
-per cent
+percent
 perfectly
 perhaps
 permanently
