@@ -104,7 +104,7 @@ export const createSelectDifficulty = () => {
         input.type  = 'checkbox';
         input.classList.add('checkBoxesDifficulty');
         input.value = difficulties[i-1];
-        input.checked = true;
+        input.checked = false;
 
         divCheckBoxes.appendChild( label );
         divCheckBoxes.appendChild( input );
@@ -154,7 +154,7 @@ export const createSelectWordsType = () => {
         input.type  = 'checkbox';
         input.classList.add('inputWordsType');
         input.value = wordsTypeCodes[i];
-        input.checked = true;
+        input.checked = false;
 
         divCheckBoxes.appendChild( label );
         divCheckBoxes.appendChild( input );
@@ -170,7 +170,7 @@ export const createSelectWordsType = () => {
     input.type  = 'checkbox';
     input.classList.add('inputSelectAllWordsType');
     input.value = true;
-    input.checked = true;
+    input.checked = false;
 
     divCheckBoxes.appendChild( label );
     divCheckBoxes.appendChild( input );

@@ -11,7 +11,7 @@ export const initWordByLocalFiles = () => {
     actualWord.hiddenWord = '_ '.repeat(actualWord.translatedWord.split(':')[2].length);        // Creamos la palabra oculta según el largo de la palabra a traducir
 
     actualWord.hiddenWord = replaceSpecialCharacters( actualWord.translatedWord.split(':')[2] );             // Función para reemplazar los caracteres especiales
-   
+
     actualWord.hiddenWordArray = actualWord.hiddenWord.split(' ');
     actualWord.translatedWordArray = actualWord.translatedWord.split(':')[2].split('');
 

@@ -32,6 +32,12 @@ export const replaceSpecialCharacters = ( translatedWord ) => {             // C
 
         }
 
+        if( translatedWord[i] === ',' ) {
+
+            splitHiddenWord.splice(i, 1, `,`);  // Si la oración incluye una coma, la mostramos directamente en la palabra oculta
+
+        }
+
     }
 
     return splitHiddenWord.join(' ');

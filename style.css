@@ -119,6 +119,10 @@ hr{
   color: white;
 }
 
+#translated-word{
+  letter-spacing: 1.5px;
+}
+
 .selectGameMode, .selectLanguage1, .selectLanguage2{
   display: block;
   margin: auto;
