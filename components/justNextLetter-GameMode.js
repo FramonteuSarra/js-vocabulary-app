@@ -4,7 +4,7 @@ import { gameModeDescription } from "./renders/gameModesDescriptions";
 import { renderWords } from "./renders/renderWords";
 import { updateScore } from "./updateScore";
 
-export const justNextLetter = ( pressedKey ) => {       // Modo de juego que solo es válido al tocar la siguiente letra de la palabra, y no en cualquier orden
+export const justNextLetter = ( pressedKey ) => {       // Modo de juego que solo es válido al tocar la siguiente letra de la palabra, y no en cualquier orden.
 
     if ( !pressedKey ) return;
 
