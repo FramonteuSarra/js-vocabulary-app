@@ -13,9 +13,11 @@ export const initArrayByParameters = () => {
     
     for( let i = 0; i < gameModeDescription.wordsTypes.length; i++) {
 
-        temporalOriginalArray.push( ...gameModeDescription.originalWordsArray[gameModeDescription.wordsTypes[i]] );     // Introducimos en el arreglo temporal los arreglos de cada tipo de palabra elegida
+        console.log( gameModeDescription.originalWordsArray );
+
+        temporalOriginalArray.push( ...gameModeDescription.originalWordsArray.filter( ( word ) => word.split(':')[3] === gameModeDescription.wordsTypes[i] ));     // Introducimos en el arreglo temporal los arreglos de cada tipo de palabra elegida
         
-        if( !gameModeDescription.translateAPI ) temporalTranslatedArray.push( ...gameModeDescription.translatedWordsArray[gameModeDescription.wordsTypes[i]] ); // (SOLO con archivos locales) Introducimos en el arreglo temporal los arreglos de cada tipo de palabra elegida
+        if( !gameModeDescription.translateAPI ) temporalTranslatedArray.push( ...gameModeDescription.translatedWordsArray.filter( ( word ) => word.split(':')[3] === gameModeDescription.wordsTypes[i] )); // (SOLO con archivos locales) Introducimos en el arreglo temporal los arreglos de cada tipo de palabra elegida
 
 
     }     
