@@ -62,11 +62,6 @@ export const getRandomWord = () => {
             actualWord.wordType = '(Núm.)';
             break;
 
-        case 'vinf':
-
-            actualWord.wordType = '(V. Inf.)';
-            break;
-
         default:
 
             actualWord.wordType = '';

@@ -7,7 +7,7 @@ import { gameModeDescription } from "./renders/gameModesDescriptions";
  * @returns    Retorna directamente la palabra oculta con todos los caracteres especiales y espacios cambiados por los necesarios
  */
 
-export const replaceSpecialCharacters = () => {             // Cada idioma tiene armado un arreglo con los caracteres especiales (con tildes, dieresis, etc), a cambiar por letras normales, acá evaluamos si la palabra los incluye y los reemplazamos en la palabra a evaluar
+export const replaceSpecialCharacters = ( translatedWord ) => {             // Cada idioma tiene armado un arreglo con los caracteres especiales (con tildes, dieresis, etc), a cambiar por letras normales, acá evaluamos si la palabra los incluye y los reemplazamos en la palabra a evaluar
                                                                             // Sin embargo a la hora de renderizar la palabra vamos a utilizar la palabra original, por lo que los caracteres especiales si saldran en pantalla
     for( let i = 0; i < gameModeDescription.specialCharactersToReplace.length; i = i + 2) {
 
@@ -20,22 +20,19 @@ export const replaceSpecialCharacters = () => {             // Cada idioma tiene
 
     }
 
-    console.log( actualWord.translatedWord.split(':')[2] );
-    console.log( actualWord.renderTranslatedWord );
-
-    actualWord.hiddenWord = '_ '.repeat(actualWord.translatedWord.split(':')[2].length);        // Creamos la palabra oculta según el largo de la palabra a traducir.
+    actualWord.hiddenWord = '_ '.repeat(translatedWord.length);        // Creamos la palabra oculta según el largo de la palabra a traducir.
 
     const splitHiddenWord = actualWord.hiddenWord.split(' ');
 
-    for( let i = 0; i < actualWord.translatedWord.split(':')[2].length; i++ ) {
+    for( let i = 0; i < translatedWord.length; i++ ) {
 
-        if( actualWord.translatedWord.split(':')[2][i] === ' ' ) {
+        if( translatedWord[i] === ' ' ) {
 
             splitHiddenWord.splice(i, 1, ` `);   // Reemplazamos los espacios que hayan por el caracter ALT+255 (caracter invisible) para poder visualizarlos en la app automaticamente en caso de oraciones o palabras compuestas
 
         }
 
-        if( actualWord.translatedWord.split(':')[2][i] === ',' ) {
+        if( translatedWord[i] === ',' ) {
 
             splitHiddenWord.splice(i, 1, `,`);  // Si la oración incluye una coma, la mostramos directamente en la palabra oculta
 

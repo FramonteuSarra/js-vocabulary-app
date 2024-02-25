@@ -27,7 +27,7 @@ export const App = () => {
 
     }
 
-    document.querySelector('.continueGameButton')?.remove();                                // Remueve el botón de continuar juego en caso de existir
+    document.querySelector('.nextWordButton')?.remove();                                // Remueve el botón de pasar palabra en caso de existir
     selectContainerHtml.append( restartGameButton );
     restartGameButton.addEventListener('click', restartGame, true);                     // Botón para reiniciar el juego
 

@@ -15,7 +15,7 @@ export const justNextLetter = ( pressedKey ) => {       // Modo de juego que sol
     if ( actualWord.translatedWordArray[actualWord.wordIteration] === pressedKey ) {   // No hace falta recorrer el split de la palabra, solo nos interesa evaluar la siguiente letra
 
         actualWord.translatedWordArray[actualWord.wordIteration] = '1';      // Cambiamos la letra de la posición actual por un número (Puede ser casi cualquier otra cosa), para que en la próxima iteración no vuelva a coincidir una letra ya encontrada
-        actualWord.hiddenWordArray[actualWord.wordIteration] = actualWord.translatedWord.split(':')[2][actualWord.wordIteration];
+        actualWord.hiddenWordArray[actualWord.wordIteration] = actualWord.renderTranslatedWord[actualWord.wordIteration];
         success = true;
 
         renderWords( actualWord.renderOriginalWord, actualWord.hiddenWordArray.join(' ') );

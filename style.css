@@ -99,7 +99,7 @@ hr{
   margin-bottom: 30px;
 }
 
-.nextWordButton, .continueGameButton{
+.nextWordButton{
   background-color:  #BFFD0B;
   font-size: 80%;
   border-radius: 15px;
