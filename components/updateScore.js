@@ -1,5 +1,6 @@
 import { App } from "../app";
-import { headerTitleHtml, translatedWordHtml } from "../helpers/references";
+import { headerTitleHtml, selectContainerHtml, translatedWordHtml } from "../helpers/references";
+import { continueGame } from "./continueGame";
 import { actualWord } from "./getRandomWord";
 import { gameModeDescription } from "./renders/gameModesDescriptions";
 import { renderScore } from "./renders/renderScore"
@@ -100,6 +101,8 @@ export const updateScore = ( action ) => {
                 localStorage.setItem(localStorageKey, score.highestScore);
             }
             headerTitleHtml.innerText = 'Palabra Completada!';
+            console.log( actualWord.renderTranslatedWord );
+            translatedWordHtml.innerText = actualWord.renderTranslatedWord;
             
             const options = document.querySelectorAll('.option-gamemode');          // Desactivamos los modos de juego para que no se pueda cambiar de modo hasta que no se complete este proceso
             
@@ -109,20 +112,17 @@ export const updateScore = ( action ) => {
                                
             })
 
-            setTimeout(() => {                                      // Esperamos un segundo y medio antes de volver a ejecutar la app con una nueva palabra
-                
-                options.forEach( ( option ) => {                    // Habilitamos los modos nuevamente..
+            document.querySelector('.restartGameButton')?.remove();
+            document.querySelector('.nextWordButton')?.remove();                                // Remueve el botón de pasar palabra en caso de existir
 
-                    option.disabled = '';
-                                   
-                })
-                
-                App();
-                headerTitleHtml.innerText = gameModeDescription.name;
-                document.querySelector(`.${ gameModeDescription.keyboardClass }`).focus();
-                        
-            }, 1500);
-            break;
+            const continueGameButton = document.createElement('button');
+
+            continueGameButton.innerText = 'Continuar Juego';
+            continueGameButton.classList.add('continueGameButton');
+
+            selectContainerHtml.append( continueGameButton );
+            continueGameButton.addEventListener('click', continueGame, true);                       
+           
 
     };
     

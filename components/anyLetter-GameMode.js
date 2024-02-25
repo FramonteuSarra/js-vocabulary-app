@@ -15,7 +15,7 @@ export const anyLetter = ( pressedKey ) => {    // Modo de juego en el que cualq
         if( actualWord.translatedWordArray[actualWord.wordIteration] === pressedKey ) {  // Si la letra presionada es igual a la letra actual recorrida...
 
             actualWord.translatedWordArray[actualWord.wordIteration] = '1';    // Cambiamos la letra de la posición actual por un número (Puede ser casi cualquier otra cosa), para que en la próxima iteración no vuelva a coincidir una letra ya encontrada
-            actualWord.hiddenWordArray[actualWord.wordIteration] = actualWord.renderTranslatedWord[actualWord.wordIteration];
+            actualWord.hiddenWordArray[actualWord.wordIteration] = actualWord.translatedWord.split(':')[2][actualWord.wordIteration];
             success = true;
 
             renderWords( actualWord.renderOriginalWord, actualWord.hiddenWordArray.join(' ') );

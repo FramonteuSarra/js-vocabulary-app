@@ -31,8 +31,8 @@ export const createSelectGameMode = () => {
 
 }
 
-const codeLanguages = [',','es-ES','en-GB','ru-RU','de-DE','fr-FR','it-IT','pt-PT'];
-const languages = [',','Español','Inglés','Ruso','Alemán','Francés','Italiano','Portugués'];
+const codeLanguages = [',','es-ES','ru-RU'];
+const languages = [',','Español','Ruso'];
 
 export const createSelectLanguages = ( argument ) => {
 
@@ -91,9 +91,9 @@ export const createSelectDifficulty = () => {
     divSelectBox.appendChild( selectDifficulty );
     divSelectBox.appendChild( divOverSelect );
 
-    const difficulties = ['a1','a2','b1','b2','c1','c2'];
+    const difficulties = ['f1l1','f1l2','f1l3','f1l4','f1l5','f1l6','f1l7','f1l8','f1l9','f1l10','f2l1','f2l2','f2l3','f2l4','f2l5','f2l6','f2l7','f2l8','f2l9','f2l10','f3l1','f3l2','f3l3','f3l4','f3l5','f3l6','f3l7','f3l8','f3l9','f3l10','f4l1','f4l2','f4l3','f4l4','f4l5','f4l6','f4l7','f4l8','f4l9','f4l10'];
 
-    for( let i = 1; i <= 6; i++) {
+    for( let i = 1; i <= difficulties.length; i++) {
        
         const label = document.createElement('label');
         const input = document.createElement('input');
@@ -139,9 +139,9 @@ export const createSelectWordsType = () => {
     divSelectBox.appendChild( selectWordsType );
     divSelectBox.appendChild( divOverSelect );
 
-    const wordsTypeNames = ['Sustantivos','Adjetivos','Verbos','Adverbios','Núm. Cardinales','Núm. Ordinales','Oraciones'];
-    // const wordsTypeCodes = ['n','adj','v','adv','numcard','numord','sentence'];
-    const wordsTypeCodes = ['0','1','2','3','4','5','6'];
+    const wordsTypeNames = ['Sustantivos','Adjetivos','Verbos conj.','Adverbios','Núm. Cardinales','Núm. Ordinales','Oraciones','Verbos infinitivos'];
+    const wordsTypeCodes = ['n','adj','v','adv','numcard','numord','sentence','vinf'];
+    // const wordsTypeCodes = ['0','1','2','3','4','5','6','7'];
 
     for( let i = 0; i < wordsTypeCodes.length; i++) {
        
